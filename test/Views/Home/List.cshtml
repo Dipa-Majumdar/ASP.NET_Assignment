@@ -1,0 +1,30 @@
+﻿
+@model IEnumerable<test.Models.ProductInventory>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div>Product Inventory System</div>
+<form action="/action_page.php">
+    <br><br>
+
+
+</form>
+
+
+
+@foreach (var item in Model)
+{
+<div>
+    @item.name
+    @item.price
+    @item.quantity
+    @item.type
+    <a href="Home/Update">update</a>
+    <a href="Home/Delete">delete</a>
+   
+    <hr />
+</div>
+}
