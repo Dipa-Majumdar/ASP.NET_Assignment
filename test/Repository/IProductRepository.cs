@@ -9,29 +9,35 @@ namespace test.Repository
 
     public interface IProductRepository
     {
-        void List();
-        void Add(ProductInventory prod);
-        void Update();
+        List<ProductInventory> List();
+        List<ProductInventory> Add(ProductInventory prod);
+        ProductInventory Update(string name);
         void Delete();
     }
+    
     public class ProductImp : IProductRepository
     {
+        Database db=new Database();
         List<ProductInventory> product_list = new List<ProductInventory>();
-        void IProductRepository.List()
+       
+        List<ProductInventory> IProductRepository.List()
         {
-            
-            throw new NotImplementedException();
+            return  (db.GetProductList());
         }
 
-        void IProductRepository.Add(ProductInventory prod)
+        List<ProductInventory> IProductRepository.Add(ProductInventory prod)
         {
             product_list.Add(prod);
+            return product_list;
         }
 
-        void IProductRepository.Update()
+        ProductInventory IProductRepository.Update(string name)
         {
-            throw new NotImplementedException();
+            var prodList=db.GetProductList();
+            return prodList.FirstOrDefault(r => r.name == name);
         }
+
+
 
         void IProductRepository.Delete()
         {

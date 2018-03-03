@@ -1,50 +1,35 @@
-﻿@model test.Models.ProductInventory
-<div>Product Inventory System</div>
+﻿@model test.ViewModels.ProductEditModel
 
+<h1>Product Inventory System</h1>
+<h2>Add Product</h2>
 
-<!DOCTYPE html>
+<form method="post">
+    
+    <div>
+    <label asp-for="name">Product Name:</label>
+    <input asp-for="name" /><br />
+    <span asp-validation-for="name"></span>
+    </div>
+  
+    <div>
+    <label asp-for="price">Product Price:</label>
+    <input asp-for="price" /><br />
+    <span asp-validation-for="price"></span>
+    </div>
+   
+    <div>
+    <label asp-for="quantity">Product Quantity:</label>
+    <input asp-for="quantity" /><br />
+    <span asp-validation-for="quantity"></span>
+    </div>
+    
+    <div> 
+    <label asp-for="type">Product Type:</label>
+    <input asp-for="type" /><br />
+    <span asp-validation-for="type"></span>
+    </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add Page</title>
-</head>
-<body>
-    @using (Html.BeginForm("Add", "Home", FormMethod.Post))
-    {
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th colspan="2" align="center">Person Details</th>
-            </tr>
-            <tr>
-                <td>Product Name: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.name)
-                </td>
-            </tr>
-            <tr>
-                <td>Product Price: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.price)
-                </td>
-            </tr>
-            <tr>
-                <td>Product Quantity: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.quantity)
-                </td>
-            </tr>
-            <tr>
-                <td>Product Type: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.type)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><a href="Home/Add">Add</a></td>
-            </tr>
-        </table>
-    }
-</body>
-</html>
+    <input type="submit" name="save" value="Save" />
+    
+</form>
+ 

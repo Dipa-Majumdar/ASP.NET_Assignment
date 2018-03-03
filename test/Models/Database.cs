@@ -8,7 +8,7 @@ namespace test.Models
     public class Database
     {
         List<ProductInventory> product_list = new List<ProductInventory>();
-        public List<ProductInventory> getProductList()
+        public List<ProductInventory> GetProductList()
         {
             product_list.Add((new ProductInventory() { name = "lettuce", price = 10.5, quantity = 50, type = "Leafy green" }));
             product_list.Add(new ProductInventory() { name = "cabbage", price = 20, quantity = 100, type = "Cruciferous" });

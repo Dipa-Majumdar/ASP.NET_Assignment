@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<test.Models.ProductInventory>
+@model test.ViewModels.HomeIndexViewModel 
 
 
 @{
@@ -7,23 +7,18 @@
 }
 
 <div>Product Inventory System</div>
-<form action="/action_page.php">
-    <br><br>
-
-
-</form>
 
 
 
-@foreach (var item in Model)
+@foreach (var item in Model.Products)
 {
 <div>
     @item.name
     @item.price
     @item.quantity
     @item.type
-    <a href="Home/Update">update</a>
-    <a href="Home/Delete">delete</a>
+    <a href="update/@item.name">update</a>
+    <a href="Delete">delete</a>
    
     <hr />
 </div>

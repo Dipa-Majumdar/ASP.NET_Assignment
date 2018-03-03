@@ -1,25 +1,37 @@
-﻿@{
+﻿@model test.Models.ProductInventory
+@{
     ViewData["Title"] = "Update Page";
 }
 <div>Product Inventory System</div>
-<form action="/action_page.php">
-    Enter Product Name:
-    <input name="productName" type="text">
-    <br><br>
 
-    Enter Product Price:
-    <input name="productPrice" type="text">
-    <br><br>
+<form method="post">
 
-    Enter Product Quantity:
-    <input name="productQuantity" type="text">
-    <br><br>
+    <div>
+        <label asp-for="name">Product Name:</label>
+        <input asp-for="name" /><br />
+        <br><br>
+    </div>
 
-    Enter Product Type:
-    <input name="productType" type="text">
-    <br><br>
-        <button type="button" onclick="alert('implement this method to product update a product')">Update</button>
+    <div>
+        <label asp-for="price">Product Price:</label>
+        <input asp-for="price" /><br />
+        <br><br>
+    </div>
 
+    <div>
+        <label asp-for="quantity">Product Quantity:</label>
+
+        <input asp-for="quantity" /><br />
+        <br><br>
+    </div>
+    <div>
+        <label asp-for="type">Product Type:</label>
+
+        <input asp-for="type" /><br />
+        <br><br>
+    </div>
+    <input type="submit" name="update" value="Update" />
+    <a asp-action="list">View All</a><br />
 
 
 

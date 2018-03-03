@@ -12540,12 +12540,15 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\dipamajumdar\\Desktop\\test\\test.csproj",
+      "projectUniqueName": "C:\\Users\\dipamajumdar\\Desktop\\Assignment_mvc\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\Users\\dipamajumdar\\Desktop\\test\\test.csproj",
+      "projectPath": "C:\\Users\\dipamajumdar\\Desktop\\Assignment_mvc\\test\\test.csproj",
       "packagesPath": "C:\\Users\\dipamajumdar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dipamajumdar\\Desktop\\test\\obj\\",
+      "outputPath": "C:\\Users\\dipamajumdar\\Desktop\\Assignment_mvc\\test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
