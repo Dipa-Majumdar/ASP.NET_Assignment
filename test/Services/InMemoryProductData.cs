@@ -34,6 +34,7 @@ namespace test.Services
 
         public ProductInventory Update(string name)
         {
+          
             return _products.FirstOrDefault(r => r.name == name);
             
         }
@@ -47,6 +48,12 @@ namespace test.Services
         public void Delete(ProductInventory newProduct)
         {
            
+        }
+
+        public void Delete(string name)
+        {
+            var itemToDelete = _products.Find(x => x.name == name);
+            _products.Remove(itemToDelete);
         }
 
         List<ProductInventory> _products;

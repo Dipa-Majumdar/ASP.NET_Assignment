@@ -63,7 +63,9 @@ namespace test.Controllers
         [HttpGet]
         public IActionResult Update(string name)
         {
+            
             var model = _productData.Update(name);
+            _productData.Delete(name);
             return View(model);
         }
         [HttpPost]
@@ -74,6 +76,7 @@ namespace test.Controllers
             newProduct.price = model.price;
             newProduct.quantity = model.quantity;
             newProduct.type = model.type;
+           
             newProduct = _productData.Add(newProduct);
             return RedirectToAction("Updated");
         }
@@ -82,9 +85,10 @@ namespace test.Controllers
 
             return View();
         }
-        public IActionResult Delete(ProductEditModel model)
+        [HttpGet]
+        public IActionResult Delete(string name)
         {
-            
+            _productData.Delete(name);
             return View();
         }
 

@@ -8,13 +8,13 @@ namespace test.Models
 {
     public class ProductInventory
     {
-        //[Required]
+        
         public string name;
-        //[Required]
+       
         public double price;
-        //[Required]
+        
         public int quantity;
-        //[Required]
+        
         public string type;
        
     }

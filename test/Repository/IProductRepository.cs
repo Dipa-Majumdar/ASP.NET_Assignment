@@ -12,7 +12,7 @@ namespace test.Repository
         List<ProductInventory> List();
         List<ProductInventory> Add(ProductInventory prod);
         ProductInventory Update(string name);
-        void Delete();
+        void Delete(string name);
     }
     
     public class ProductImp : IProductRepository
@@ -39,9 +39,11 @@ namespace test.Repository
 
 
 
-        void IProductRepository.Delete()
+        void IProductRepository.Delete(string name)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

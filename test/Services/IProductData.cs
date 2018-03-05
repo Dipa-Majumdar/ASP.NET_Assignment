@@ -11,7 +11,7 @@ namespace test.Services
         IEnumerable<ProductInventory> GetAll();
         ProductInventory Update(string name);
         ProductInventory Add(ProductInventory newProduct);
-        void Delete(ProductInventory newProduct);
+        void Delete(string name);
     }
    
 }
