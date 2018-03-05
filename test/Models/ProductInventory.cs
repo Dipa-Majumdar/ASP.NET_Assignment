@@ -9,13 +9,13 @@ namespace test.Models
     public class ProductInventory
     {
         
-        public string name;
+        public string Name;
        
-        public double price;
+        public double Price;
         
-        public int quantity;
+        public int Quantity;
         
-        public string type;
+        public string Type;
        
     }
    

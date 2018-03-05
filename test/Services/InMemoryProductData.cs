@@ -12,16 +12,16 @@ namespace test.Services
         {
             _products = new List<ProductInventory>
                 {
-                new ProductInventory { name = "lettuce", price = 10.5, quantity = 50, type = "Leafy green" },
-                new ProductInventory() { name = "cabbage", price = 20, quantity = 100, type = "Cruciferous" },
-                new ProductInventory() { name = "pumpkin", price = 30, quantity = 30, type = "Marrow" },
-                new ProductInventory() { name = "cauliflower", price = 10, quantity = 25, type = "Cruciferous" },
-                new ProductInventory() { name = "zucchini", price = 20.5, quantity = 50, type = "Marrow" },
-                new ProductInventory() { name = "spinach", price = 10, quantity = 100, type = "Leafy green" },
-                new ProductInventory() { name = "yam", price = 30, quantity = 50, type = "Root" },
-                new ProductInventory() { name = "broccoli", price = 20.5, quantity = 75, type = "Cruciferous" },
-                new ProductInventory() { name = "Garlic", price = 30, quantity = 20, type = "Leafy green" },
-                new ProductInventory() { name = "silverbeet", price = 10, quantity = 50, type = "Marrow" }
+                new ProductInventory { Name = "lettuce", Price = 10.5, Quantity = 50, Type = "Leafy green" },
+                new ProductInventory() { Name = "cabbage", Price = 20, Quantity = 100, Type = "Cruciferous" },
+                new ProductInventory() { Name = "pumpkin", Price = 30, Quantity = 30, Type = "Marrow" },
+                new ProductInventory() { Name = "cauliflower", Price = 10, Quantity = 25, Type = "Cruciferous" },
+                new ProductInventory() { Name = "zucchini", Price = 20.5, Quantity = 50, Type = "Marrow" },
+                new ProductInventory() { Name = "spinach", Price = 10, Quantity = 100, Type = "Leafy green" },
+                new ProductInventory() { Name = "yam", Price = 30, Quantity = 50, Type = "Root" },
+                new ProductInventory() { Name = "broccoli", Price = 20.5, Quantity = 75, Type = "Cruciferous" },
+                new ProductInventory() { Name = "Garlic", Price = 30, Quantity = 20, Type = "Leafy green" },
+                new ProductInventory() { Name = "silverbeet", Price = 10, Quantity = 50, Type = "Marrow" }
 
             };
         }
@@ -29,13 +29,13 @@ namespace test.Services
 
         public IEnumerable<ProductInventory> GetAll()
         {
-            return _products.OrderBy(r=>r.name);
+            return _products.OrderBy(r=>r.Name);
         }
 
         public ProductInventory Update(string name)
         {
           
-            return _products.FirstOrDefault(r => r.name == name);
+            return _products.FirstOrDefault(r => r.Name == name);
             
         }
 
@@ -50,9 +50,9 @@ namespace test.Services
            
         }
 
-        public void Delete(string name)
+        public void Delete(string Name)
         {
-            var itemToDelete = _products.Find(x => x.name == name);
+            var itemToDelete = _products.Find(x => x.Name == Name);
             _products.Remove(itemToDelete);
         }
 

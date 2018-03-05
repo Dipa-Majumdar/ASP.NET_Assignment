@@ -46,14 +46,13 @@ namespace test.Controllers
             if (ModelState.IsValid)
             {
                 var newProduct = new ProductInventory();
-                newProduct.name = model.name;
-                newProduct.price = model.price;
-                newProduct.quantity = model.quantity;
-                newProduct.type = model.type;
+                newProduct.Name = model.Name;
+                newProduct.Price = model.Price;
+                newProduct.Quantity = model.Quantity;
+                newProduct.Type = model.Type;
 
                 newProduct = _productData.Add(newProduct);
-                //return View("Update", newProduct);
-                return RedirectToAction(nameof(Update), new { name = newProduct.name });
+                return RedirectToAction(nameof(Update), new { Name = newProduct.Name });
             }
             else
             {
@@ -61,21 +60,21 @@ namespace test.Controllers
             }
         }
         [HttpGet]
-        public IActionResult Update(string name)
+        public IActionResult Update(string Name)
         {
             
-            var model = _productData.Update(name);
-            _productData.Delete(name);
+            var model = _productData.Update(Name);
+            _productData.Delete(Name);
             return View(model);
         }
         [HttpPost]
         public IActionResult Update(ProductEditModel model)
         {
             var newProduct = new ProductInventory();
-            newProduct.name = model.name;
-            newProduct.price = model.price;
-            newProduct.quantity = model.quantity;
-            newProduct.type = model.type;
+            newProduct.Name = model.Name;
+            newProduct.Price = model.Price;
+            newProduct.Quantity = model.Quantity;
+            newProduct.Type = model.Type;
            
             newProduct = _productData.Add(newProduct);
             return RedirectToAction("Updated");
@@ -86,9 +85,9 @@ namespace test.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Delete(string name)
+        public IActionResult Delete(string Name)
         {
-            _productData.Delete(name);
+            _productData.Delete(Name);
             return View();
         }
 

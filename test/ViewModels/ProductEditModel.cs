@@ -9,12 +9,12 @@ namespace test.ViewModels
     public class ProductEditModel
     {
         [Required]
-        public string name { get; set; }
+        public string Name { get; set; }
         [Required]
-        public double price { get; set; }
+        public double Price { get; set; }
         [Required]
-        public int quantity { get; set; }
+        public int Quantity { get; set; }
         [Required]
-        public string type { get; set; }
+        public string Type { get; set; }
     }
 }

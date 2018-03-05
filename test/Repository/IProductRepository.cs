@@ -31,10 +31,10 @@ namespace test.Repository
             return product_list;
         }
 
-        ProductInventory IProductRepository.Update(string name)
+        ProductInventory IProductRepository.Update(string Name)
         {
             var prodList=db.GetProductList();
-            return prodList.FirstOrDefault(r => r.name == name);
+            return prodList.FirstOrDefault(r => r.Name == Name);
         }
 
 
