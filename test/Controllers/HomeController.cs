@@ -52,7 +52,7 @@ namespace test.Controllers
                 newProduct.Type = model.Type;
 
                 newProduct = _productData.Add(newProduct);
-                return RedirectToAction(nameof(Update), new { Name = newProduct.Name });
+                return RedirectToAction(nameof(Updated));
             }
             else
             {
@@ -60,11 +60,11 @@ namespace test.Controllers
             }
         }
         [HttpGet]
-        public IActionResult Update(string Name)
+        public IActionResult Update(string name)
         {
             
-            var model = _productData.Update(Name);
-            _productData.Delete(Name);
+            var model = _productData.Update(name);
+            _productData.Delete(name);
             return View(model);
         }
         [HttpPost]
@@ -85,9 +85,9 @@ namespace test.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Delete(string Name)
+        public IActionResult Delete(string name)
         {
-            _productData.Delete(Name);
+            _productData.Delete(name);
             return View();
         }
 
